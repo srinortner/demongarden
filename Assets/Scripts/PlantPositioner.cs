@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class PlantPositioner : MonoBehaviour
 {
     public GameObject plant;
+    public AudioSource positioning;
 
     private bool keydown;
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class PlantPositioner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            
+            positioning.Play();
             keydown = true;
             Instantiate(plant, new Vector3(Camera.main.transform.position.x, 0.125f, Camera.main.transform.position.z+ 1.5f), Quaternion.identity);
         }
