@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6693501967217053949}
   - component: {fileID: 6693501967217053948}
   - component: {fileID: 6693501967217053951}
-  - component: {fileID: 6693501967217053950}
   - component: {fileID: 6693501967217053945}
+  - component: {fileID: 7480519077176371418}
+  - component: {fileID: 2101189418246084384}
   m_Layer: 0
   m_Name: Plant00
   m_TagString: Untagged
@@ -84,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6693501967217053950
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6693501967217053944}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6693501967217053945
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,6 +101,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &7480519077176371418
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693501967217053944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 3, z: 0}
+--- !u!114 &2101189418246084384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6693501967217053944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00605f3259f4e7142825c25dd4d2eb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7207938098547591911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178,6 +191,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062722618095312, guid: a574a15d0e27b86449df9ed0bb07788a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 135912368265263764, guid: a574a15d0e27b86449df9ed0bb07788a, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
