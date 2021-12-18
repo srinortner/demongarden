@@ -8,10 +8,12 @@ public class DevilMovement : MonoBehaviour
     public Transform target;
     public float speed;
     public bool isMoving = false;
+
+    private float timeUntilSpawningSeconds = 30.0f;
     // Start is called before the first frame update
     void Start()
     {
-        isMoving = true;
+        isMoving = false;
 
     }
 
@@ -19,6 +21,11 @@ public class DevilMovement : MonoBehaviour
 
         void Update()
         {
+            timeUntilSpawningSeconds -= Time.deltaTime;
+            if (timeUntilSpawningSeconds <= 0.0f)
+            {
+                isMoving = true;
+            }
             if(isMoving && (target.position.x - transform.position.x) > 3.5f)
             {
                 Vector3 currentTarget = new Vector3(target.position.x, transform.position.y, target.position.z);

@@ -23,7 +23,7 @@ public class PlantPositioner : MonoBehaviour
         {
             positioning.Play();
             keydown = true;
-            Instantiate(plant, new Vector3(Camera.main.transform.position.x, 0.125f, Camera.main.transform.position.z+ 1.5f), Quaternion.identity);
+            Instantiate(plant, new Vector3(Camera.main.transform.position.x, 0.125f, Camera.main.transform.position.z+ 10.5f), Quaternion.identity);
             PlantBoxCollision ds = plant.GetComponent<PlantBoxCollision>();
             ds.damage = 10;
             ds.health = 100;
