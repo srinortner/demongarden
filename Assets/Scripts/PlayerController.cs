@@ -3,16 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public int health;
 
     private bool isDead;
+    private Text playerText;
+
+    private ParticleSystem blood;
     // Start is called before the first frame update
     void Start()
     {
         isDead = false;
+        blood = GetComponent<ParticleSystem>();
+        blood.Stop();
+        playerText = GetComponentInChildren<Text>();
     }
 
     // Update is called once per frame
@@ -23,6 +30,13 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (isDead)
+        {
+            playerText.text = "YOU ARE DEAD!   R - Restart";
+            playerText.enabled = true;
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,7 +51,9 @@ public class PlayerController : MonoBehaviour
             if (health <= 0)
             {
                 isDead = true;
+                blood.Play();
                 print("Player is dead!");
+                
             }
         }
     }
