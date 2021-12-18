@@ -803,6 +803,10 @@ PrefabInstance:
       value: Devil
       objectReference: {fileID: 0}
     - target: {fileID: 1000010252498714, guid: a967089208f523246bbb4911dd5cde5c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010252498714, guid: a967089208f523246bbb4911dd5cde5c, type: 3}
       propertyPath: m_TagString
       value: Devil
       objectReference: {fileID: 0}
@@ -13438,9 +13442,21 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 547053327}
+    - target: {fileID: 2101189418246084384, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2101189418246084384, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6693501967217053944, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
       propertyPath: m_Name
       value: Plantbox00
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693501967217053944, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
+      propertyPath: m_TagString
+      value: Plant
       objectReference: {fileID: 0}
     - target: {fileID: 6693501967217053945, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
       propertyPath: m_UseGravity
