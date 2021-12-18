@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlantBoxCollision : MonoBehaviour
 {
     private Text text;
+    private bool isDead;
 
     private bool playerClose;
     // Start is called before the first frame update
