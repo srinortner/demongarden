@@ -30,8 +30,8 @@ public class DevilController : MonoBehaviour
         if (other.tag.Equals("Plant"))
         {
             print("Player collides with Devil");
-            GameObject plant = GameObject.Find("Plantbox00");
-            PlantBoxCollision ds = plant.GetComponent<PlantBoxCollision>();
+            GameObject plant = GameObject.Find("Rafflesia1");
+            PlantCollision ds = plant.GetComponent<PlantCollision>();
             int takenDamage = ds.damage;
             health -= takenDamage;
             if (health <= 0)

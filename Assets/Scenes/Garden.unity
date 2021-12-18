@@ -13438,6 +13438,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 483243846720595468, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 483243846720595468, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2101189418246084384, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
       propertyPath: text
       value: 
@@ -13456,7 +13464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6693501967217053944, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
       propertyPath: m_TagString
-      value: Plant
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6693501967217053945, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
       propertyPath: m_UseGravity
@@ -13505,6 +13513,10 @@ PrefabInstance:
     - target: {fileID: 6693501967217053949, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7206792073542987109, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
+      propertyPath: m_Name
+      value: Rafflesia1
       objectReference: {fileID: 0}
     - target: {fileID: 7480519077176371418, guid: 1111f76f2e196b4448c930c16636b96c, type: 3}
       propertyPath: m_IsTrigger

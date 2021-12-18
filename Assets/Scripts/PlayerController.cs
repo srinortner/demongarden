@@ -56,6 +56,22 @@ public class PlayerController : MonoBehaviour
                 
             }
         }
+
+        if (other.tag.Equals("Plant"))
+        {
+            print("Player collides with Plant");
+            GameObject plant = GameObject.Find("Rafflesia1");
+            PlantCollision ds = plant.GetComponent<PlantCollision>();
+            int takenDamage = ds.damage;
+            health -= takenDamage;
+            if (health <= 0)
+            {
+                isDead = true;
+                blood.Play();
+                print("Player is dead!");
+                
+            }
+        }
     }
     
 }
