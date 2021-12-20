@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
         if (isDead)
         {
-            playerText.text = "YOU ARE DEAD!   R - Restart";
+            playerText.text = "YOU ARE DEAD! R - Restart";
             playerText.enabled = true;
         }
 

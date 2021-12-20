@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.60815096, g: 0.9181696, b: 0.97511786, a: 1}
+  m_IndirectSpecularColor: {r: 0.61245114, g: 0.92010176, b: 0.9756779, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1083,6 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  isDead: 0
 --- !u!199 &1246814169
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -10807,7 +10808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4035905879614248216, guid: 8458460d30a5459458660b3f4383dbb0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4035905879614248216, guid: 8458460d30a5459458660b3f4383dbb0, type: 3}
       propertyPath: m_SizeDelta.y
@@ -10860,6 +10861,10 @@ PrefabInstance:
     - target: {fileID: 4035905879614248216, guid: 8458460d30a5459458660b3f4383dbb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035905879614248217, guid: 8458460d30a5459458660b3f4383dbb0, type: 3}
+      propertyPath: m_Text
+      value: 'Q - Water Plant                                                                   '
       objectReference: {fileID: 0}
     - target: {fileID: 4035905879614248219, guid: 8458460d30a5459458660b3f4383dbb0, type: 3}
       propertyPath: m_Name
