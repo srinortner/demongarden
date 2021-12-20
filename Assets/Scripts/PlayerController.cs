@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     public int health;
 
-    private bool isDead;
+    public bool isDead;
     private Text playerText;
 
     private ParticleSystem blood;
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag.Equals("Devil"))
         {
             print("Player collides with Devil");
-            GameObject devil = GameObject.Find("Devil");
+            GameObject devil = GameObject.FindWithTag("Devil");
             DevilController ds = devil.GetComponent<DevilController>();
             int takenDamage = ds.damage;
             health -= takenDamage;

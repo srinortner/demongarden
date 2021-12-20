@@ -41,5 +41,14 @@ public class DevilController : MonoBehaviour
 
             }
         }
+        if (other.tag.Equals("House"))
+        {
+            print("Devil collides with House");
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            PlayerController pc = player.GetComponent<PlayerController>();
+            pc.isDead = true;    
+            print("Player is dead! Devil reached the house :D");
+           
+        }
     }
 }
