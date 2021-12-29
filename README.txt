@@ -22,6 +22,7 @@ TODOs 1st Prototype:
 - 2-3 Plant Types
 - Switch between plants to place
 - More waves of enemies
+- Fix Devil not dying from plants
 
 
 --------Nice to have

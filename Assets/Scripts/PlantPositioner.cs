@@ -40,18 +40,41 @@ public class PlantPositioner : MonoBehaviour
             }
         }
 
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
-            positioning.Play();
-            keydown = true;
-            GameObject current = Instantiate(plantsAvailableForPlacement[currentPlantIndex], new Vector3(Camera.main.transform.position.x, 0.125f, Camera.main.transform.position.z+ 10.5f), Quaternion.identity);
-            PlantCollision ds = current.GetComponentInChildren<PlantCollision>();
-            ds.damage = 10;
-            ds.health = 100;
+            Vector3 spawnPosition = new Vector3(Camera.main.transform.position.x, 0.125f, Camera.main.transform.position.z + 10.5f);
+            
+            if (spaceIsEmpty(spawnPosition))
+            {
+                positioning.Play();
+                keydown = true;
+                GameObject current = Instantiate(plantsAvailableForPlacement[currentPlantIndex],spawnPosition, Quaternion.identity);
+                PlantCollision ds = current.GetComponentInChildren<PlantCollision>();
+                ds.damage = 10;
+                ds.health = 100;
+            }
         }
         else
         {
             keydown = false;
+        }
+    }
+
+    private bool spaceIsEmpty(Vector3 spawnPos)
+    {
+        float radius = 0.5f;
+        LayerMask layerMask = (1 << 6) | (1 << 0);
+        Collider[] colliders = Physics.OverlapSphere(spawnPos, radius);
+        //colliders[0] is always ground! therefore irrelevant
+        if (colliders.Length > 1)
+        {
+            print("false");
+            print(colliders[0].name);
+            return false;
+        } else {
+            print("true");
+            return true;
         }
     }
 }
