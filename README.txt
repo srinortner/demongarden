@@ -17,15 +17,17 @@ TODOs 1st Prototype:
 
 -----------FINAL Prototype
 - Fix Camera and Player Movement
-- Can't place plants on top of each other
+- Can't place plants on top of each other DONE
 - Plants die if you don't water them
-- 2-3 Plant Types
-- Switch between plants to place
+- Number of plants that can be placed is not infinite
+- 2-3 Plant Types DONE(2)
+- Switch between plants to place DONE
 - More waves of enemies
 - Fix Devil not dying from plants
 
 
 --------Nice to have
+- Top bar displays currently selected plant
 - Well for getting Water
 - Water bar
 - Walking animation

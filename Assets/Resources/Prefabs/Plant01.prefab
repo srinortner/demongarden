@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6096632035412019599}
   - component: {fileID: 2099447717029780647}
   - component: {fileID: 369130139267366632}
+  - component: {fileID: 6294328302163922117}
   m_Layer: 0
   m_Name: plant
   m_TagString: Untagged
@@ -4809,6 +4810,21 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &6294328302163922117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4575344556634743403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7291156010639a949bec505e8f22ae90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  damage: 5
+  fireTimer: 10
 --- !u!1 &6693501967217053944
 GameObject:
   m_ObjectHideFlags: 0

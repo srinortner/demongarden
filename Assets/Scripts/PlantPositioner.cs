@@ -50,7 +50,7 @@ public class PlantPositioner : MonoBehaviour
                 positioning.Play();
                 keydown = true;
                 GameObject current = Instantiate(plantsAvailableForPlacement[currentPlantIndex],spawnPosition, Quaternion.identity);
-                PlantCollision ds = current.GetComponentInChildren<PlantCollision>();
+                PlantController ds = current.GetComponentInChildren<PlantController>();
                 ds.damage = 10;
                 ds.health = 100;
             }

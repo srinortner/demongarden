@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlantBoxCollision : MonoBehaviour
+public class PlantBoxController : MonoBehaviour
 {
     private Text text;
     private bool plantIsWatered;

@@ -61,9 +61,12 @@ public class PlayerController : MonoBehaviour
         {
             print("Player collides with Plant");
             GameObject plant = GameObject.Find("Rafflesia1");
-            PlantCollision ds = plant.GetComponent<PlantCollision>();
+            PlantController ds = plant.GetComponent<PlantController>();
             int takenDamage = ds.damage;
-            health -= takenDamage;
+            if (ds.dealsDamage)
+            {
+                health -= takenDamage;
+            }
             if (health <= 0)
             {
                 isDead = true;
