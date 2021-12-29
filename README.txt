@@ -4,6 +4,7 @@ Walk: A, S, D, W
 Place Plant: E
 Water Plant: Q
 Restart: R
+Change Selected Plant: 1
 
 
 TODOs 1st Prototype:
