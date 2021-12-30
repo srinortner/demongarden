@@ -9,8 +9,20 @@ public class PlantController : MonoBehaviour
     public int health;
     public int damage;
     public bool dealsDamage;
+
+    public void setToDead()
+    {
+        isDead = true;
+    }
+
+    public bool getIsDead()
+    {
+        return isDead;
+    }
+
     void Start()
     {
+
         dealsDamage = true;
     }
 

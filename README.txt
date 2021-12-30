@@ -18,7 +18,7 @@ TODOs 1st Prototype:
 -----------FINAL Prototype
 - Fix Camera and Player Movement
 - Can't place plants on top of each other DONE
-- Plants die if you don't water them
+- Plants die if you don't water them DONE
 - Number of plants that can be placed is not infinite
 - 2-3 Plant Types DONE(2)
 - Switch between plants to place DONE
