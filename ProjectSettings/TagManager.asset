@@ -8,6 +8,9 @@ TagManager:
   - Devil
   - Devil2
   - House
+  - PlantCounter
+  - WaterText
+  - NameTag
   layers:
   - Default
   - TransparentFX

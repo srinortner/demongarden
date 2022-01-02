@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class PlantPositioner : MonoBehaviour
@@ -10,6 +11,10 @@ public class PlantPositioner : MonoBehaviour
     public List<GameObject> plantsAvailableForPlacement;
     int currentPlantIndex;
     private int maxAmount;
+    private Text plantCounterText;
+    private Text nameText;
+
+    private string nameTextDefault = "Plants left:                      ";
 
     private bool keydown;
     // Start is called before the first frame update
@@ -21,7 +26,11 @@ public class PlantPositioner : MonoBehaviour
         plantsAvailableForPlacement.Add(plant01);
         currentPlantIndex = 0;
         maxAmount = 5; //5 plants default
-
+        plantCounterText = GameObject.FindWithTag("PlantCounter").GetComponent<Text>();
+        nameText = GameObject.FindWithTag("NameTag").GetComponent<Text>();
+        plantCounterText.enabled = true;
+        plantCounterText.text = "                    " + maxAmount;
+        nameText.enabled = true;
     }
 
     // Update is called once per frame
@@ -32,7 +41,7 @@ public class PlantPositioner : MonoBehaviour
         {
             if (currentPlantIndex < plantsAvailableForPlacement.Count-1)
             {
-                currentPlantIndex += 1;
+                currentPlantIndex = 1;
                 print("Current Plant is " + currentPlantIndex);
             }
             else
@@ -46,19 +55,33 @@ public class PlantPositioner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Vector3 spawnPosition = new Vector3(Camera.main.transform.position.x, 0.125f, Camera.main.transform.position.z + 10.5f);
-            
-            if (spaceIsEmpty(spawnPosition) && maxAmount > 1)
+            print(maxAmount);
+            if (spaceIsEmpty(spawnPosition))
             {
-                maxAmount -= 1;
-                positioning.Play();
-                keydown = true;
-                GameObject current = Instantiate(plantsAvailableForPlacement[currentPlantIndex],spawnPosition, Quaternion.identity);
-                PlantController ds = current.GetComponentInChildren<PlantController>();
-                ds.damage = 10;
-                ds.health = 100;
+                if (maxAmount > 0)
+                {
+                    nameText.text = nameTextDefault;
+                    maxAmount -= 1;
+                    plantCounterText.text = "                    " + maxAmount;
+                    positioning.Play();
+                    keydown = true;
+                    GameObject current = Instantiate(plantsAvailableForPlacement[currentPlantIndex], spawnPosition, Quaternion.identity);
+                    PlantController ds = current.GetComponentInChildren<PlantController>();
+                    ds.damage = 10;
+                    ds.health = 100;
+                } else
+                {
+                    plantCounterText.text = "";
+                    plantCounterText.enabled = false;
+                    nameText.text = "Max number of plants planted";
+                    //print("Max number of plants planted."); //for debug purposes
+                }
+
             } else
             {
-                print("Max number of plants planted.");
+                plantCounterText.text = "";
+                //plantCounterText.enabled = false;
+                nameText.text = "Space is occupied";
             }
         }
         else

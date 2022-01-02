@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isDead;
     private Text playerText;
+    private string PlayerTextTag = "WaterText";
 
     private ParticleSystem blood;
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
         isDead = false;
         blood = GetComponent<ParticleSystem>();
         blood.Stop();
-        playerText = GetComponentInChildren<Text>();
+        playerText = GameObject.FindWithTag(PlayerTextTag).GetComponent<Text>();
     }
 
     // Update is called once per frame

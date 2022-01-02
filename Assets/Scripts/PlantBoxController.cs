@@ -43,7 +43,7 @@ public class PlantBoxController : MonoBehaviour
             }
         } else
         { // plant wasn't watered
-            print("Plant needs water..."); //TODO: better feedback than just console text needed!
+            //print("Plant needs water..."); //TODO: better feedback than just console text needed!
             bufferTime -= Time.deltaTime; //time buffer so user has some time before it actually disappears
             if (bufferTime <= 0)
             {
