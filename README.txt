@@ -19,7 +19,7 @@ TODOs 1st Prototype:
 - Fix Camera and Player Movement
 - Can't place plants on top of each other DONE
 - Plants die if you don't water them DONE
-- Number of plants that can be placed is not infinite
+- Number of plants that can be placed is not infinite DONE
 - 2-3 Plant Types DONE(2)
 - Switch between plants to place DONE
 - More waves of enemies
