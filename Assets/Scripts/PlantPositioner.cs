@@ -9,6 +9,7 @@ public class PlantPositioner : MonoBehaviour
     public AudioSource positioning;
     public List<GameObject> plantsAvailableForPlacement;
     int currentPlantIndex;
+    private int maxAmount;
 
     private bool keydown;
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class PlantPositioner : MonoBehaviour
         plantsAvailableForPlacement.Add(plant00);
         plantsAvailableForPlacement.Add(plant01);
         currentPlantIndex = 0;
+        maxAmount = 5; //5 plants default
 
     }
 
@@ -45,14 +47,18 @@ public class PlantPositioner : MonoBehaviour
         {
             Vector3 spawnPosition = new Vector3(Camera.main.transform.position.x, 0.125f, Camera.main.transform.position.z + 10.5f);
             
-            if (spaceIsEmpty(spawnPosition))
+            if (spaceIsEmpty(spawnPosition) && maxAmount > 1)
             {
+                maxAmount -= 1;
                 positioning.Play();
                 keydown = true;
                 GameObject current = Instantiate(plantsAvailableForPlacement[currentPlantIndex],spawnPosition, Quaternion.identity);
                 PlantController ds = current.GetComponentInChildren<PlantController>();
                 ds.damage = 10;
                 ds.health = 100;
+            } else
+            {
+                print("Max number of plants planted.");
             }
         }
         else
