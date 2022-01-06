@@ -8,12 +8,16 @@ public class DevilMovement : MonoBehaviour
     public Transform target;
     public float speed;
     public bool isMoving = false;
+    private Vector3 scale;
 
     public float timeUntilSpawningSeconds = 30.0f;
     // Start is called before the first frame update
     void Start()
     {
         isMoving = false;
+        scale = this.transform.localScale;
+        this.transform.localScale = new Vector3(0.0f,0.0f,0.0f);
+        GetComponentInChildren<ParticleSystem>().Stop();
         
     }
 
@@ -24,6 +28,8 @@ public class DevilMovement : MonoBehaviour
             timeUntilSpawningSeconds -= Time.deltaTime;
             if (timeUntilSpawningSeconds <= 0.0f)
             {
+                this.transform.localScale = scale;
+                GetComponentInChildren<ParticleSystem>().Play();
                 isMoving = true;
             }
 
