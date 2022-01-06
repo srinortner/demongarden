@@ -19,7 +19,7 @@ public class PlantBoxController : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         text = player.GetComponentInChildren<Text>();
         plantIsWatered = false;
-        bufferTime = 15.0f;
+        bufferTime = 30.0f;
     }
 
     // Update is called once per frame
@@ -35,6 +35,7 @@ public class PlantBoxController : MonoBehaviour
 
         if (plantIsWatered)
         {
+            bufferTime = 30.0f; //reset buffer timer
             waterTimer -= Time.deltaTime;
             if (waterTimer <= 0)
             {
@@ -45,11 +46,15 @@ public class PlantBoxController : MonoBehaviour
         { // plant wasn't watered
             //print("Plant needs water..."); //TODO: better feedback than just console text needed!
             bufferTime -= Time.deltaTime; //time buffer so user has some time before it actually disappears
+
             if (bufferTime <= 0)
             {
                 GetComponentInChildren<PlantController>().setToDead();
                 print("Plant died...");
-                this.gameObject.SetActive(false);
+                Destroy(this.gameObject);
+            } else if (bufferTime > 0.0f && bufferTime <= 15.0f)
+            {
+                GetComponent<Renderer>().material.SetColor("_Color", new Color(0.0f, 0.1f, 0.01f, 1.0f));
             }
             
         }
