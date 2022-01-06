@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class PlantBoxController : MonoBehaviour
 {
-    private Text text;
+    private float timeWithoutWaterLeft;
     private bool plantIsWatered;
-    private float waterTimer;
-    private float bufferTime;
-
+    public float timePlantCanLiveWithoutWater;
     private bool playerClose;
+    private Text text;
+    private float timeUntilWaterNeeded;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class PlantBoxController : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         text = player.GetComponentInChildren<Text>();
         plantIsWatered = false;
-        bufferTime = 60.0f;
+        timeWithoutWaterLeft = timePlantCanLiveWithoutWater;
     }
 
     // Update is called once per frame
@@ -30,42 +30,35 @@ public class PlantBoxController : MonoBehaviour
             waterPlant();
             print("water plant");
             plantIsWatered = true;
-            waterTimer = 60.0f;
+            timeUntilWaterNeeded = timePlantCanLiveWithoutWater;
         }
 
         if (plantIsWatered)
         {
-            bufferTime = 30.0f; //reset buffer timer
-            waterTimer -= Time.deltaTime;
-            if (waterTimer <= 0)
+            timeUntilWaterNeeded -= Time.deltaTime;
+            
+            if (timeUntilWaterNeeded <= 0)
             {
+                timeWithoutWaterLeft = timePlantCanLiveWithoutWater; //reset buffer timer
                 plantIsWatered = false;
-                GetComponent<Renderer>().material.SetColor("_Color", new Color(0.1f, 0.7f, 0.03f, 1.0f));
+                GetComponent<Renderer>().material.SetColor("_Color", new Color(0.1f, 0.07f, 0.03f, 1.0f));
             }
         } else
         { // plant wasn't watered
             //print("Plant needs water..."); //TODO: better feedback than just console text needed!
-            bufferTime -= Time.deltaTime; //time buffer so user has some time before it actually disappears
+            timeWithoutWaterLeft -= Time.deltaTime; //time buffer so user has some time before it actually disappears
+            print("Time without water left " + timeWithoutWaterLeft);
 
-            if (bufferTime <= 0)
+            if (timeWithoutWaterLeft <= 0)
             {
                 GetComponentInChildren<PlantController>().setToDead();
                 print("Plant died...");
                 Destroy(this.gameObject);
-            } else if (bufferTime > 0.0f && bufferTime <= 15.0f)
+            } else if (timeWithoutWaterLeft > 0.0f && timeWithoutWaterLeft <= (timePlantCanLiveWithoutWater/3))
             {
-                GetComponent<Renderer>().material.SetColor("_Color", new Color(0.0f, 0.1f, 0.01f, 1.0f));
+                GetComponent<Renderer>().material.SetColor("_Color", new Color(0.0f, 0.0f, 0.0f, 0.0f));
             }
             
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag.Equals("Player"))
-        {
-            text.enabled = true;
-            playerClose = true;
         }
     }
 
@@ -75,6 +68,15 @@ public class PlantBoxController : MonoBehaviour
         {
             text.enabled = false;
             playerClose = false;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Player"))
+        {
+            text.enabled = true;
+            playerClose = true;
         }
     }
 

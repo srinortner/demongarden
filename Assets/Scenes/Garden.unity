@@ -6361,7 +6361,7 @@ MonoBehaviour:
   target: {fileID: 763883031}
   speed: 5
   isMoving: 0
-  timeUntilSpawningSeconds: 30
+  timeUntilSpawningSeconds: 10
 --- !u!136 &1745176625
 CapsuleCollider:
   m_ObjectHideFlags: 0
