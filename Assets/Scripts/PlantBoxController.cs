@@ -19,7 +19,7 @@ public class PlantBoxController : MonoBehaviour
         GameObject player = GameObject.Find("Player");
         text = player.GetComponentInChildren<Text>();
         plantIsWatered = false;
-        bufferTime = 30.0f;
+        bufferTime = 60.0f;
     }
 
     // Update is called once per frame

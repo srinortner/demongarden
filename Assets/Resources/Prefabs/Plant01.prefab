@@ -4823,7 +4823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  damage: 5
+  damage: 10
   dealsDamage: 0
   fireTimer: 10
 --- !u!1 &6693501967217053944

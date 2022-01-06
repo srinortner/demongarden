@@ -9,11 +9,12 @@ public class DevilController : MonoBehaviour
     public int damage;
 
     private bool isDead;
+    private int worthInPlants;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        worthInPlants = 2;
     }
 
     // Update is called once per frame
@@ -21,6 +22,10 @@ public class DevilController : MonoBehaviour
     {
         if (isDead)
         {
+            GameObject player = GameObject.Find("Player");
+            PlantPositioner plantPositioner = player.GetComponent<PlantPositioner>();
+            plantPositioner.numberOfPlantsPlaceable = plantPositioner.numberOfPlantsPlaceable + worthInPlants;
+            plantPositioner.displayNewNumberOfPlaceablePlants();
             this.gameObject.SetActive(false);
         }
     }
@@ -29,7 +34,7 @@ public class DevilController : MonoBehaviour
     {
         if (other.tag.Equals("Plant"))
         {
-            print("Player collides with Devil");
+            print("Plant collides with Devil");
             GameObject plant = GameObject.Find("Rafflesia1");
             PlantController ds = plant.GetComponent<PlantController>();
             int takenDamage = ds.damage;

@@ -9,8 +9,8 @@ public class PlantPositioner : MonoBehaviour
 {
     public AudioSource positioning;
     public List<GameObject> plantsAvailableForPlacement;
-    int currentPlantIndex;
-    private int maxAmount;
+    public int currentPlantIndex;
+    public int numberOfPlantsPlaceable;
     private Text plantCounterText;
     private Text nameText;
 
@@ -25,11 +25,11 @@ public class PlantPositioner : MonoBehaviour
         plantsAvailableForPlacement.Add(plant00);
         plantsAvailableForPlacement.Add(plant01);
         currentPlantIndex = 0;
-        maxAmount = 5; //5 plants default
+        numberOfPlantsPlaceable = 15; //5 plants default
         plantCounterText = GameObject.FindWithTag("PlantCounter").GetComponent<Text>();
         nameText = GameObject.FindWithTag("NameTag").GetComponent<Text>();
         plantCounterText.enabled = true;
-        plantCounterText.text = "                    " + maxAmount;
+        plantCounterText.text = "                    " + numberOfPlantsPlaceable;
         nameText.enabled = true;
     }
 
@@ -55,14 +55,14 @@ public class PlantPositioner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Vector3 spawnPosition = new Vector3(Camera.main.transform.position.x, 0.125f, Camera.main.transform.position.z + 10.5f);
-            print(maxAmount);
+            print(numberOfPlantsPlaceable);
             if (spaceIsEmpty(spawnPosition))
             {
-                if (maxAmount > 0)
+                if (numberOfPlantsPlaceable > 0)
                 {
                     nameText.text = nameTextDefault;
-                    maxAmount -= 1;
-                    plantCounterText.text = "                    " + maxAmount;
+                    numberOfPlantsPlaceable -= 1;
+                    plantCounterText.text = "                    " + numberOfPlantsPlaceable;
                     positioning.Play();
                     keydown = true;
                     GameObject current = Instantiate(plantsAvailableForPlacement[currentPlantIndex], spawnPosition, Quaternion.identity);
@@ -88,6 +88,11 @@ public class PlantPositioner : MonoBehaviour
         {
             keydown = false;
         }
+    }
+
+    public void displayNewNumberOfPlaceablePlants()
+    {
+        plantCounterText.text = "                    " + numberOfPlantsPlaceable;
     }
 
     private bool spaceIsEmpty(Vector3 spawnPos)
