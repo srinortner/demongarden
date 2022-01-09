@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2099447717029780647}
   - component: {fileID: 369130139267366632}
   - component: {fileID: 6294328302163922117}
+  - component: {fileID: 6708099817728430737}
   m_Layer: 0
   m_Name: plant
   m_TagString: Plant
@@ -4825,7 +4826,21 @@ MonoBehaviour:
   health: 10
   damage: 10
   dealsDamage: 0
-  fireTimer: 10
+  fireTimer: 5
+--- !u!136 &6708099817728430737
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4575344556634743403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 6
+  m_Direction: 1
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &6693501967217053944
 GameObject:
   m_ObjectHideFlags: 0
@@ -4952,7 +4967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00605f3259f4e7142825c25dd4d2eb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timePlantCanLiveWithoutWater: 40
+  timePlantCanLiveWithoutWater: 100
 --- !u!1001 &2885795374559021204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5020,6 +5035,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 135153461035502610, guid: 4269869be246b9648b7775b42c2a452d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4269869be246b9648b7775b42c2a452d, type: 3}
 --- !u!4 &2890690463764273970 stripped
@@ -5037,6 +5056,10 @@ PrefabInstance:
     - target: {fileID: 1298481390831956, guid: 8eb0568004c87d045b19bc1cdee45e51, type: 3}
       propertyPath: m_Name
       value: Dogram Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298481390831956, guid: 8eb0568004c87d045b19bc1cdee45e51, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4762448551908962, guid: 8eb0568004c87d045b19bc1cdee45e51, type: 3}
       propertyPath: m_RootOrder
@@ -5092,6 +5115,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4762448551908962, guid: 8eb0568004c87d045b19bc1cdee45e51, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136682986788483866, guid: 8eb0568004c87d045b19bc1cdee45e51, type: 3}
+      propertyPath: m_Radius
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 136682986788483866, guid: 8eb0568004c87d045b19bc1cdee45e51, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136682986788483866, guid: 8eb0568004c87d045b19bc1cdee45e51, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5168,6 +5203,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 135153461035502610, guid: 4269869be246b9648b7775b42c2a452d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4269869be246b9648b7775b42c2a452d, type: 3}
 --- !u!4 &3784595057105331474 stripped
@@ -5240,6 +5279,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4974413057954726, guid: 4269869be246b9648b7775b42c2a452d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 135153461035502610, guid: 4269869be246b9648b7775b42c2a452d, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

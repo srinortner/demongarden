@@ -38,9 +38,15 @@ public class DevilController : MonoBehaviour
             GameObject plant = GameObject.Find("Rafflesia1");
             PlantController ds = plant.GetComponent<PlantController>();
             int takenDamage = ds.damage;
+            
             if (ds.dealsDamage)
             {
+                print("plant deals damage");
                 health -= takenDamage;
+            }
+            else
+            {
+                print("no damage");
             }
             if (health <= 0)
             {
