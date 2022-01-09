@@ -12,10 +12,12 @@ public class PlayerMovement : MonoBehaviour
     float turnSmoothVelocity;
     public Transform cam;
 
+    private Vector3 offset;
     private float velocity = 0;
  
     private void Start()
     {
+        offset = new Vector3(0f, 4.05f, -7.5f);
         characterController = GetComponent<CharacterController>();
         _playerController = GetComponent<PlayerController>();
     }
@@ -38,6 +40,10 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
                 characterController.Move(moveDir.normalized * MovementSpeed * Time.deltaTime);
                 cam.rotation = transform.rotation;
+                Vector3 desiredPosition = transform.position + offset;
+                Vector3 smoothedPosition = Vector3.Lerp(cam.position, desiredPosition, turnSmoothTime);
+                cam.position = smoothedPosition;
+                cam.LookAt(this.transform);
             }
             
 
