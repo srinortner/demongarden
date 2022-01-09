@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
                 characterController.Move(moveDir.normalized * MovementSpeed * Time.deltaTime);
                 cam.rotation = transform.rotation;
                 Vector3 desiredPosition = transform.position + offset;
-                Vector3 smoothedPosition = Vector3.Lerp(cam.position, desiredPosition, turnSmoothTime);
+                Vector3 smoothedPosition = Vector3.Lerp(cam.position, desiredPosition, 0.5f);
                 cam.position = smoothedPosition;
                 cam.LookAt(this.transform);
             }
