@@ -8,6 +8,10 @@ public class PlayerMovement : MonoBehaviour
     private PlayerController _playerController;
     public float MovementSpeed =1;
     public float Gravity = 9.8f;
+    public float turnSmoothTime = 0.1f;
+    float turnSmoothVelocity;
+    public Transform cam;
+
     private float velocity = 0;
  
     private void Start()
@@ -23,7 +27,19 @@ public class PlayerMovement : MonoBehaviour
             // player movement - forward, backward, left, right
             float horizontal = Input.GetAxis("Horizontal") * MovementSpeed;
             float vertical = Input.GetAxis("Vertical") * MovementSpeed;
-            characterController.Move((Vector3.right * horizontal + Vector3.forward * vertical) * Time.deltaTime);
+            Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized; //we only want to move in x and z axis (y is upwards movement)
+
+            if (direction.magnitude >= 0.1f)
+            {
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg; // Atan2 returns angle between x and y axis so we know in which direction the player is facing
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime); //smoothing function for player turns
+                transform.rotation = Quaternion.Euler(0f, targetAngle, 0);
+
+                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                characterController.Move(moveDir.normalized * MovementSpeed * Time.deltaTime);
+                cam.rotation = transform.rotation;
+            }
+            
 
             // Gravity
             if (characterController.isGrounded)
