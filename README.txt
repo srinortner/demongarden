@@ -22,11 +22,12 @@ TODOs 1st Prototype:
 - Number of plants that can be placed is not infinite DONE
 - 2-3 Plant Types DONE(2)
 - Switch between plants to place DONE
-- More waves of enemies
+- More waves of enemies DONE
 - Fix Devil not dying from plants DONE
 
 
 --------Nice to have
+- Controls explained at beginning
 - Top bar displays currently selected plant
 - Well for getting Water
 - Water bar

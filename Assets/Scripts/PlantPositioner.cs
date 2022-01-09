@@ -25,7 +25,6 @@ public class PlantPositioner : MonoBehaviour
         plantsAvailableForPlacement.Add(plant00);
         plantsAvailableForPlacement.Add(plant01);
         currentPlantIndex = 0;
-        numberOfPlantsPlaceable = 15; //5 plants default
         plantCounterText = GameObject.FindWithTag("PlantCounter").GetComponent<Text>();
         nameText = GameObject.FindWithTag("NameTag").GetComponent<Text>();
         plantCounterText.enabled = true;

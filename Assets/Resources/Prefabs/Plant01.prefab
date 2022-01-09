@@ -4967,7 +4967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00605f3259f4e7142825c25dd4d2eb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timePlantCanLiveWithoutWater: 100
+  timePlantCanLiveWithoutWater: 40
 --- !u!1001 &2885795374559021204
 PrefabInstance:
   m_ObjectHideFlags: 0

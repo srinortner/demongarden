@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ce543a3151f8343b6ebf86675b9280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 5
   damage: 5
 --- !u!136 &142372906
 CapsuleCollider:
@@ -1987,7 +1987,7 @@ MonoBehaviour:
   positioning: {fileID: 39770283}
   plantsAvailableForPlacement: []
   currentPlantIndex: 0
-  numberOfPlantsPlaceable: 0
+  numberOfPlantsPlaceable: 6
 --- !u!114 &1246814168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7368,7 +7368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ce543a3151f8343b6ebf86675b9280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 5
   damage: 5
 --- !u!114 &1936441064
 MonoBehaviour:
