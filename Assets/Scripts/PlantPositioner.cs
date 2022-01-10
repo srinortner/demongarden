@@ -13,6 +13,7 @@ public class PlantPositioner : MonoBehaviour
     public int numberOfPlantsPlaceable;
     private Text plantCounterText;
     private Text nameText;
+    private GameObject player;
 
     private string nameTextDefault = "Plants left:                      ";
 
@@ -22,6 +23,7 @@ public class PlantPositioner : MonoBehaviour
     {
         GameObject plant00 = (GameObject)Resources.Load("Prefabs/Plant00", typeof(GameObject));
         GameObject plant01 = (GameObject)Resources.Load("Prefabs/Plant01", typeof(GameObject));
+        player = GameObject.FindWithTag("Player");
         plantsAvailableForPlacement.Add(plant00);
         plantsAvailableForPlacement.Add(plant01);
         currentPlantIndex = 0;
@@ -53,7 +55,7 @@ public class PlantPositioner : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Vector3 spawnPosition = new Vector3(Camera.main.transform.position.x, 0.125f, Camera.main.transform.position.z + 10.5f);
+            Vector3 spawnPosition = new Vector3(player.transform.position.x + 0.5f, 0.125f, player.transform.position.z + 2f);
             print(numberOfPlantsPlaceable);
             if (spaceIsEmpty(spawnPosition))
             {
@@ -97,7 +99,7 @@ public class PlantPositioner : MonoBehaviour
     private bool spaceIsEmpty(Vector3 spawnPos)
     {
         float radius = 0.5f;
-        LayerMask layerMask = (1 << 6) | (1 << 0);
+        LayerMask layerMask = (1 << 7) | (1 << 0);
         Collider[] colliders = Physics.OverlapSphere(spawnPos, radius);
         //colliders[0] is always ground! therefore irrelevant
         if (colliders.Length > 1)

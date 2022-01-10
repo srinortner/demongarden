@@ -33,17 +33,18 @@ public class PlayerMovement : MonoBehaviour
 
             if (direction.magnitude >= 0.1f)
             {
-                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg; // Atan2 returns angle between x and y axis so we know in which direction the player is facing
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; // Atan2 returns angle between x and y axis so we know in which direction the player is facing
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime); //smoothing function for player turns
                 transform.rotation = Quaternion.Euler(0f, targetAngle, 0);
 
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
                 characterController.Move(moveDir.normalized * MovementSpeed * Time.deltaTime);
-                cam.rotation = transform.rotation;
-                Vector3 desiredPosition = transform.position + offset;
-                Vector3 smoothedPosition = Vector3.Lerp(cam.position, desiredPosition, 0.5f);
-                cam.position = smoothedPosition;
-                cam.LookAt(this.transform);
+                //code for manual script (CameraMovement)
+                //cam.rotation = transform.rotation;
+                //Vector3 desiredPosition = transform.position + offset;
+                //Vector3 smoothedPosition = Vector3.Lerp(cam.position, desiredPosition, 0.5f);
+                //cam.position = smoothedPosition;
+                //cam.LookAt(this.transform);
             }
             
 
