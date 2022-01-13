@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.60815096, g: 0.9181696, b: 0.97511786, a: 1}
+  m_IndirectSpecularColor: {r: 0.61245114, g: 0.92010176, b: 0.9756779, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 8.020775, z: -16.343502}
+  m_FollowOffset: {x: 0, y: 4.070621, z: -12.050074}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1061,7 +1061,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471727749}
-  m_LocalRotation: {x: 0.22614186, y: -0.000000016760636, z: 0.0000000038910826, w: 0.9740944}
+  m_LocalRotation: {x: 0.1621672, y: -0.000000016978621, z: 0.00000000279031, w: 0.9867633}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1653,7 +1653,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770566858}
-  m_LocalRotation: {x: 0.19060867, y: -0.000000016890924, z: 0.0000000032796859, w: 0.98166615}
+  m_LocalRotation: {x: 0.12621604, y: -0, z: -0, w: 0.9920028}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1727,7 +1727,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817688709}
-  m_LocalRotation: {x: 0.20838615, y: -0.000000016828645, z: 0.0000000035855716, w: 0.97804666}
+  m_LocalRotation: {x: 0.14419165, y: 0.000000017026572, z: -0.000000002481017, w: 0.9895498}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2176,8 +2176,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244239338}
-  m_LocalRotation: {x: 0.21336494, y: -0.000000021789665, z: 0.0000000025837474, w: 0.9769726}
-  m_LocalPosition: {x: 0, y: 8.020775, z: -16.343502}
+  m_LocalRotation: {x: 0.14491163, y: 0.000000015758223, z: -0.0000000022335562, w: 0.9894446}
+  m_LocalPosition: {x: 0, y: 4.070621, z: -12.050074}
   m_LocalScale: {x: 1.5, y: 1.5000001, z: 1.5000001}
   m_Children:
   - {fileID: 1492686310}
@@ -7233,7 +7233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 8.020775, z: -16.343502}
+  m_FollowOffset: {x: 0, y: 4.070621, z: -12.050074}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -7359,7 +7359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 8.020775, z: -16.343502}
+  m_FollowOffset: {x: 0, y: 4.070621, z: -12.050074}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -7710,7 +7710,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578343498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.020775, z: -16.343502}
+  m_LocalPosition: {x: 0, y: 4.070621, z: -12.050074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 471727750}
@@ -7755,14 +7755,14 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.64
+    Value: 0.52
     m_SpeedMode: 0
-    m_MaxSpeed: 4
+    m_MaxSpeed: 1
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
-    m_InvertInput: 0
+    m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
     m_Wrap: 0
@@ -7781,12 +7781,12 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 450
-    m_AccelTime: 0.1
+    m_MaxSpeed: 500
+    m_AccelTime: 0.01
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
     m_InputAxisValue: 0
-    m_InvertInput: 1
+    m_InvertInput: 0
     m_MinValue: -180
     m_MaxValue: 180
     m_Wrap: 1
@@ -7809,12 +7809,12 @@ MonoBehaviour:
   m_BindingMode: 4
   m_SplineCurvature: 0.2
   m_Orbits:
-  - m_Height: 14
+  - m_Height: 12.15
     m_Radius: 12
-  - m_Height: 5
-    m_Radius: 17
+  - m_Height: 3.7
+    m_Radius: 12
   - m_Height: -1.9
-    m_Radius: 12
+    m_Radius: 10
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 471727751}
