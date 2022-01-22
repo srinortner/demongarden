@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //public
     public float movementSpeed = 2.0f;
+    public float rotationspeed = 1.0f;
 
     //private
     private CharacterController characterController;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private float rotation;
+    
 
 
     private void Start()
@@ -45,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 move = transform.forward * Input.GetAxis("Vertical");
             characterController.Move(move * Time.deltaTime * movementSpeed);
 
-            rotation = Input.GetAxis ("Horizontal") * movementSpeed;
+            rotation = Input.GetAxis ("Horizontal") * rotationspeed;
             transform.Rotate(transform.up, rotation);
 
         }
