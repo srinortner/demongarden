@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     //public
-    public float movementSpeed = 2.0f;
+    //public float movementSpeed = 1.0f;
 
     //private
     private CharacterController characterController;
@@ -20,7 +20,17 @@ public class PlayerMovement : MonoBehaviour
     
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float rotation;
+    Vector3 moveDirection = Vector3.zero;
+    Vector2 rotation = Vector2.zero;
+
+    public float speed = 7.5f;
+    public float jumpSpeed = 8.0f;
+    public float gravity = 0.0f;
+    public Transform playerCameraParent;
+    public float lookSpeed = 2.0f;
+    public float lookXLimit = 60.0f;
+
+    private bool canMove = true;
 
 
     private void Start()
@@ -28,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         // offset = new Vector3(0f, 4.05f, -7.5f);
         characterController = GetComponent<CharacterController>();
         _playerController = GetComponent<PlayerController>();
+
+        rotation.y = transform.eulerAngles.y;
     }
  
     void Update()
@@ -42,45 +54,34 @@ public class PlayerMovement : MonoBehaviour
                 playerVelocity.y = 0f;
             }
 
-            Vector3 move = transform.forward * Input.GetAxis("Vertical");
-            characterController.Move(move * Time.deltaTime * movementSpeed);
+            // We are grounded, so recalculate move direction based on axes
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Vector3 right = transform.TransformDirection(Vector3.right);
+            float curSpeedX = canMove ? speed * Input.GetAxis("Vertical") : 0;
+            float curSpeedY = canMove ? speed * Input.GetAxis("Horizontal") : 0;
+            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-            rotation = Input.GetAxis ("Horizontal") * movementSpeed;
-            transform.Rotate(transform.up, rotation);
-
+        } else
+        { //player is dead --> stop camera movement
+            canMove = false;
         }
 
-        //     // player movement - forward, backward, left, right
-        //     float horizontal = Input.GetAxis("Horizontal") * MovementSpeed;
-        //     float vertical = Input.GetAxis("Vertical") * MovementSpeed;
-        //     Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized; //we only want to move in x and z axis (y is upwards movement)
+        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
+        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
+        // as an acceleration (ms^-2)
+        moveDirection.y -= gravity * Time.deltaTime;
 
-        //     if (direction.magnitude >= 0.1f)
-        //     {
-        //         float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; // Atan2 returns angle between x and y axis so we know in which direction the player is facing
-        //         float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime); //smoothing function for player turns
-        //         // transform.rotation = Quaternion.Euler(0f, targetAngle, 0);
-        //         transform.turnSmoothTime()
-        //         Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-        //         characterController.Move(moveDir.normalized * MovementSpeed * Time.deltaTime);
-        //         //code for manual script (CameraMovement)
-        //         //cam.rotation = transform.rotation;
-        //         //Vector3 desiredPosition = transform.position + offset;
-        //         //Vector3 smoothedPosition = Vector3.Lerp(cam.position, desiredPosition, 0.5f);
-        //         //cam.position = smoothedPosition;
-        //         //cam.LookAt(this.transform);
-        //     }
-            
+        // Move the controller
+        characterController.Move(moveDirection * Time.deltaTime);
 
-        //     // Gravity
-        //     if (characterController.isGrounded)
-        //     {
-        //         velocity = 0;
-        //     }
-        //     else
-        //     {
-        //         velocity -= Gravity * Time.deltaTime;
-        //         characterController.Move(new Vector3(0, velocity, 0));
-        //     }
+        // Player and Camera rotation
+        if (canMove)
+        {
+            rotation.y += Input.GetAxis("Mouse X") * lookSpeed;
+            rotation.x += -Input.GetAxis("Mouse Y") * lookSpeed;
+            rotation.x = Mathf.Clamp(rotation.x, -lookXLimit, lookXLimit);
+            playerCameraParent.localRotation = Quaternion.Euler(rotation.x, 0, 0);
+            transform.eulerAngles = new Vector2(0, rotation.y);
+        }
     }
 }
