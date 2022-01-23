@@ -404,6 +404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   damage: 5
+  lastEnemy: 0
 --- !u!136 &142372906
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -539,6 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   damage: 10
+  lastEnemy: 0
 --- !u!114 &208537792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,6 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   damage: 5
+  lastEnemy: 0
 --- !u!136 &227107541
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1032,6 +1035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   damage: 5
+  lastEnemy: 0
 --- !u!114 &589686702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,6 +1262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   damage: 5
+  lastEnemy: 0
 --- !u!1 &769477082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   damage: 5
+  lastEnemy: 0
 --- !u!136 &920502371
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1926,6 +1932,9 @@ MonoBehaviour:
   plantsAvailableForPlacement: []
   currentPlantIndex: 0
   numberOfPlantsPlaceable: 6
+  plantSymbol: {fileID: 769477084}
+  plant1: {fileID: 21300000, guid: a1a4550585c28394ba33b5af41928e57, type: 3}
+  plant2: {fileID: 21300000, guid: 3e194fd4d12355a40811aaf65e821e9e, type: 3}
 --- !u!114 &1246814168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7125,6 +7134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   damage: 5
+  lastEnemy: 0
 --- !u!114 &1745176624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7308,6 +7318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   damage: 5
+  lastEnemy: 0
 --- !u!114 &1936441064
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class PlantPositioner : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class PlantPositioner : MonoBehaviour
     private Text plantCounterText;
     private Text nameText;
     private GameObject player;
+    public Image plantSymbol;
+    public Sprite plant1;
+    public Sprite plant2;
 
     private string nameTextDefault = "Plants left:                      ";
 
@@ -44,11 +48,13 @@ public class PlantPositioner : MonoBehaviour
             {
                 currentPlantIndex = 1;
                 print("Current Plant is " + currentPlantIndex);
+                plantSymbol.sprite = plant2;
             }
             else
             {
                 currentPlantIndex = 0;
                 print("Current Plant is " + currentPlantIndex);
+                plantSymbol.sprite = plant1;
             }
         }
 
