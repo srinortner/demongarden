@@ -34,11 +34,33 @@ public class PlayerController : MonoBehaviour
 
         if (isDead)
         {
-            playerText.text = "YOU ARE DEAD! R - Restart";
+            playerText.text = "YOU ARE DEAD!";
             playerText.enabled = true;
+            waitWhileBleeding();
+
+
         }
+        
 
     }
+
+    private void waitWhileBleeding()
+    {
+        StartCoroutine(waiter());
+    }
+    
+            
+        
+    IEnumerator waiter()
+    {
+        //Wait for 2 seconds
+        yield return new WaitForSeconds(3);
+        
+        SceneManager.LoadScene("EndScreen");
+
+    }
+    
+    
 
     private void OnTriggerEnter(Collider other)
     {
