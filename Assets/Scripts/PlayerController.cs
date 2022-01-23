@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public bool isDead;
     private Text playerText;
     private string PlayerTextTag = "WaterText";
+    private float timeStart = 0;
+    Stopwatch stopwatch = new Stopwatch();
 
     private ParticleSystem blood;
     // Start is called before the first frame update
@@ -21,6 +24,7 @@ public class PlayerController : MonoBehaviour
         blood = GetComponent<ParticleSystem>();
         blood.Stop();
         playerText = GameObject.FindWithTag(PlayerTextTag).GetComponent<Text>();
+        stopwatch.Start();
     }
 
     // Update is called once per frame
@@ -34,6 +38,9 @@ public class PlayerController : MonoBehaviour
 
         if (isDead)
         {
+            stopwatch.Stop();
+            long seconds = stopwatch.ElapsedMilliseconds / 1000;
+            CrossSceneInformation.secondsSurvived = seconds.ToString();
             playerText.text = "YOU ARE DEAD!";
             playerText.enabled = true;
             waitWhileBleeding();

@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Garden.unity
     guid: 8ab27073e2f74e040b4475b78935125c
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 055e1cba0033f044592fa1ef1c97c325
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 79c7557de0e94764b901dda5fd4895eb
   m_configObjects: {}

@@ -12,6 +12,7 @@ TagManager:
   - WaterText
   - NameTag
   - PlayerBody
+  - menutext
   layers:
   - Default
   - TransparentFX
