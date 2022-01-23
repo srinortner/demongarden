@@ -8,6 +8,7 @@ public class ChangeEndScreenText : MonoBehaviour
 {
     private string secondsSurvived;
     public Text secondsText;
+    public Text won;
 
     public void Start()
     {
@@ -15,5 +16,9 @@ public class ChangeEndScreenText : MonoBehaviour
      //   print("Seconds Survived " + secondsSurvived);
     //    secondsText = GameObject.FindWithTag("menutext").GetComponent<TextMeshPro>();
         secondsText.text = secondsSurvived;
+        if (CrossSceneInformation.won)
+        {
+            won.text = "You won!";
+        }
     }
 }

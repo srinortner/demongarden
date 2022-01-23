@@ -2,14 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DevilController : MonoBehaviour
 {
     public int health;
     public int damage;
+    public bool lastEnemy = false;
 
     private bool isDead;
     private int worthInPlants;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +55,11 @@ public class DevilController : MonoBehaviour
             {
                 isDead = true;
                 print("Devil is dead!");
+                if (lastEnemy)
+                {
+                    CrossSceneInformation.won = true;
+                    SceneManager.LoadScene("EndScreen");
+                }
 
             }
         }

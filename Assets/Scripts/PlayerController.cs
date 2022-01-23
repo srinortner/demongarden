@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
         {
             stopwatch.Stop();
             long seconds = stopwatch.ElapsedMilliseconds / 1000;
+            if (seconds >= 110)
+            {
+                CrossSceneInformation.won = true;
+            }
             CrossSceneInformation.secondsSurvived = seconds.ToString();
             playerText.text = "YOU ARE DEAD!";
             playerText.enabled = true;
