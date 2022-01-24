@@ -700,10 +700,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1237580742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b0850fdbcf2f30419e106505ad9a767, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d6317c0361133b49b6cbc940c3dd0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   secondsText: {fileID: 506069492}
+  won: {fileID: 2007326357}
+  text1: {fileID: 1229776616}
+  text2: {fileID: 479902920}
 --- !u!1 &1262911279
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +847,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 57f9bf22d895a2f4d9329aae5dc94b45, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab21e333b10b8f14c9bef4f5705bf3e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1164,7 +1167,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1844831579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f609682069cf93e4092c69ca30b46629, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f45b2afb5dbe3e43b09773641b7074a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2007326355

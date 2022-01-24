@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 9a6fd99be9656ce419cfe9403a6fb1d7, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 731696e05fef39e499fe6a1426df8775, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   damage: 10
-  lastEnemy: 0
+  lastEnemy: 1
 --- !u!114 &208537792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,7 +1934,7 @@ MonoBehaviour:
   numberOfPlantsPlaceable: 6
   plantSymbol: {fileID: 769477084}
   plant1: {fileID: 21300000, guid: a1a4550585c28394ba33b5af41928e57, type: 3}
-  plant2: {fileID: 21300000, guid: 3e194fd4d12355a40811aaf65e821e9e, type: 3}
+  plant2: {fileID: 21300000, guid: 509ec54b7dbcbb04ca0ed265b982e550, type: 3}
 --- !u!114 &1246814168
 MonoBehaviour:
   m_ObjectHideFlags: 0
